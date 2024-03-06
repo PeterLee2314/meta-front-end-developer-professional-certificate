@@ -4,6 +4,8 @@ import Header from "./components/Header";
 import Main from "./components/Main";
 import Meta from "./components/Meta";
 import Footer from "./components/Footer";
+import Hero from "./components/Hero";
+import Highlights from "./components/Highlights";
 import Nav from "./components/Nav";
 import './App.css';
 
@@ -12,8 +14,9 @@ function App() {
   <ChakraProvider>
     <Main />
     <Meta />
-    <Nav />
     <Header />
+    <Hero />
+    <Highlights />
     <Footer />
   </ChakraProvider>
   );

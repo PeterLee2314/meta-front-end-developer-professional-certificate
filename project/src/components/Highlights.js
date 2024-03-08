@@ -7,6 +7,7 @@ const specials = [
         description:
           "The famous greek salad of crispy lettuce, peppers, olives and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons. ",
         getImageSrc: () => require("../images/menu/Melonandhamappetizer.jpg"),
+        text:"★Top seller★",
       },
     {
         title: "Bruchetta",
@@ -14,6 +15,7 @@ const specials = [
         description:
             "Our Bruschetta is made from grilled bread that has been smeared with garlic and seasoned with salt and olive oil. ",
         getImageSrc: () => require("../images/menu/BURRATAAppetizer.jpg"),
+        text:"👍Recommend",
     },
     {
         title: "Lemon Dessert",
@@ -21,6 +23,8 @@ const specials = [
         description:
             "This comes straight from grandma’s recipe book, every last ingredient has been sourced and is as authentic as can be imagined.",
         getImageSrc: () => require("../images/menu/Melonandshrimpappetizer.jpg"),
+        text:"❤︎New",
+
     },
 ];
 const Highlights = () => {
@@ -34,9 +38,9 @@ const Highlights = () => {
         justifyContent="space-between"
         >
         <Heading fontSize='40px'>Speicals</Heading>
-        <Button height="60px" width="200px" fontSize="18px">Online Menu</Button>
+        <Button zIndex="-1" height="60px" width="200px" fontSize="18px">Online Menu</Button>
         </HStack>
-            <Box
+            <Box 
             display="grid"
             gridTemplateColumns= "1fr 1fr 1fr"
         >
@@ -46,6 +50,7 @@ const Highlights = () => {
                 title={special.title}
                 description={special.description}
                 imageSrc={special.getImageSrc()}
+                text={special.text}
             />
             ))}
         </Box>

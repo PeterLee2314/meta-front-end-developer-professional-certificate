@@ -8,16 +8,21 @@ import Hero from "./components/Hero";
 import Highlights from "./components/Highlights";
 import Nav from "./components/Nav";
 import './App.css';
+import { AlertProvider } from "./context/alertContext";
+import Alert from './components/Alert';
 
 function App() {
   return (
   <ChakraProvider>
-    <Main />
-    <Meta />
-    <Header />
-    <Hero />
-    <Highlights />
-    <Footer />
+    <AlertProvider>
+      <Main />
+      <Meta />
+      <Header />
+      <Hero />
+      <Highlights />
+      <Footer />
+      <Alert />
+    </AlertProvider>
   </ChakraProvider>
   );
 }

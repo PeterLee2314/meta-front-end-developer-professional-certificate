@@ -5,7 +5,6 @@ const Main = () =>
     {
         return (
             <footer>
-                222
             </footer>
         );
     };

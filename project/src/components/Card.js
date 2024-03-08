@@ -3,15 +3,32 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 import deliver from "../images/icon/deliver.png"
-const Card = ({ title, description, imageSrc }) => {
+import './Card.css';
+
+
+const Card = ({ title, description, imageSrc,text }) => {
   // Implement the UI for the Card component according to the instructions.
   // You should be able to implement the component with the elements imported above.
   // Feel free to import other UI components from Chakra UI if you wish to.
 
+  let [hover,setHover]=React.useState(false);
+  const hoverText = text;
+
+  const onHover = (e) => {
+    e.preventDefault();
+    setHover(true);
+    console.log("hovered");
+  };
+  const onHoverOver = (e) => {
+    e.preventDefault(); // turn false
+    setHover(false);
+  };
+
   return (
-    <Box maxW='sm' borderWidth='1px' borderRadius='lg' bg = "white" color="black">
+    <Box zIndex="-1" maxW='sm' borderWidth='1px' borderRadius='lg' bg = "white" color="black">
     <VStack spacing={1}>
-      <Image boxSize="400px" src={imageSrc}></Image>
+    {hover && <Text fontSize='16px' color="black">{hoverText}</Text>}
+      <Image boxSize="400px" src={imageSrc} className="showcase" onMouseEnter={(e)=>onHover(e)} onMouseLeave={(e)=>onHoverOver(e)}></Image>
         <Box p='6'>
         <VStack spacing={6} align='stretch'>
         <Box height="125px">
@@ -22,7 +39,7 @@ const Card = ({ title, description, imageSrc }) => {
           </Box>
           <HStack spacing={2} fontSize="xs">
           
-            <Button>
+            <Button >
                 <HStack spacing={2} fontSize="xs">
                     <Text fontSize="16px">Order a Delivery</Text>
                     <Image src={deliver}></Image>
